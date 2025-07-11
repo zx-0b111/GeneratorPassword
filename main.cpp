@@ -12,7 +12,7 @@ void Letters() {
 	cin >> valor;
 	
 	for (int i = 0; i < valor; i++) {
-		int index = rand() % letters.length();
+		int index = rand() % letters.length(); //calculo para garantir que o numero gerado esteja dentro dos limites da variavel.
 		password += letters[index];
 	}
 }
@@ -30,7 +30,7 @@ void numbers() {
 }
 
 void characters() {
-	string character = "@-_#!$%¨&*()[]{}";
+	string character = "@-_#!$%Â¨&*()[]{}";
 	int valor3;
 	cout << "Quantity characters: ";
 	cin >> valor3;
