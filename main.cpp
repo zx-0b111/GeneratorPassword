@@ -36,7 +36,7 @@ void characters() {
 	cin >> valor3;
 
 	for (int i = 0; i < valor3; i++) {
-		int index3 = rand() % character.length();
+		int index3 = rand() % character.length(); //números aleatórios gerados em um intervalo de 0 a 15.
 		password+=character[index3];
 	}
 }
