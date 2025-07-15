@@ -6,19 +6,35 @@ using namespace std;
 
 string password = "";
 
-void Letters() {
+void LetterUpper() {
 	random_device seed;
 	mt19937 random(seed());
 	int valor;
-	cout << "Quantity letters: ";
+	cout << "Quantity letters Upper: ";
 	cin >> valor;
 	uniform_int_distribution<> distribution(0, valor);
 	
-	string letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	string letterUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	
 	for (int i = 0; i < valor; i++) {
 		int index = distribution(random);
-		password += letters[index];
+		password += letterUpper[index];
+	}
+}
+
+void LetterLower() {
+	random_device seed;
+	mt19937 random(seed());
+	int valor;
+	cout << "Quantity letters Lower: ";
+	cin >> valor;
+	uniform_int_distribution<> distribution(0, valor);
+
+	string letterLower = "abcdefghijklmnopqrstuvwxyz";
+
+	for (int i = 0; i < valor; i++) {
+		int index = distribution(random);
+		password += letterLower[index];
 	}
 }
 
@@ -60,7 +76,8 @@ void characters() {
 
 int main()
 {
-	Letters();
+	LetterUpper();
+	LetterLower();
 	numbers();
 	characters();
 	cout << "Senha gerada: " << password;
